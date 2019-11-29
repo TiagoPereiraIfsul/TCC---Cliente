@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <!--<CalendarView
+        android:id="@+id/calendarView2"
+        android:layout_width="wrap_content"
+        android:layout_height="308dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="-20dp" />-->
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Horário: " />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="50dp"/>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Barbeiro: " />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="100dp"/>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:text="Estilo corte: Valor = R$ 25,00 " />
+
+    <Spinner
+        android:id="@+id/spinner3"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="185dp"
+        android:layout_marginTop="150dp"/>
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:text="Estilo barba: Valor = R$ 10,00 " />
+
+    <Spinner
+        android:id="@+id/spinner4"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="195dp"
+        android:layout_marginTop="200dp"/>
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:text="Estilo sobrancelha: Valor = R$ 5,00 " />
+
+    <Spinner
+        android:id="@+id/spinner5"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="225dp"
+        android:layout_marginTop="250dp"/>
+
+    <TextView
+        android:id="@+id/data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"
+        android:text="TextView" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="115dp"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        app:cardBackgroundColor="#A9A9A9"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="10dp"
+        android:id="@+id/cardView"
+
+        android:layout_marginBottom="31dp"
+        android:layout_above="@+id/textView2"
+        android:layout_centerHorizontal="true">
+        <RelativeLayout android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+            <TextView android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Finalizar"
+                android:textColor="#fff"
+                android:textSize="18sp"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</FrameLayout>
