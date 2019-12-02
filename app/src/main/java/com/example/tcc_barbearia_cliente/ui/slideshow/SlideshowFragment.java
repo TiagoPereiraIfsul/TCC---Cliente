@@ -54,6 +54,7 @@ import com.squareup.picasso.Picasso;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -62,6 +63,8 @@ import java.util.stream.Collectors;
 //import java.util.Date;
 //import java.util.List;
 //import java.util.stream.Collectors;
+
+import javax.xml.transform.sax.SAXSource;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -81,18 +84,11 @@ public class SlideshowFragment extends Fragment {
     private StorageReference mStorageRef;
     private DatabaseReference mDatabaseRef;
     private ImageView imageView;
-    private TextView data;
+    private Button data;
     Date birthDate;
     DatePickerDialog datePickerDialog;
     private String[] add = new String[]
-            {"Manhã - 9h:00", "Manhã - 9h:30min", "Manhã - 10h:00", "Manhã - 10h:30min",
-                    "Manhã - 11h:00", "Manhã - 11h:30min", "Manhã - 12h:00", "Manhã - 12h:30min",
-
-                    "Tarde - 14h:00", "Tarde - 14h:30min", "Tarde - 15h:00", "Tarde - 15h:30min", "Tarde - 16h:00",
-                    "Tarde - 16h:30min", "Tarde - 17h:00", "Tarde - 17h:30min",
-
-                    "Noite - 18h:00", "Noite - 18h:30min", "Noite - 19h:00", "Noite - 19h:30min", "Noite - 20h:00",
-                    "Noite - 20h:30min", "Noite - 21h:00",};
+            {};
 
     ModeloEstilo modeloEstilo;
     ModeloBarbeiro modeloBarbeiro;
@@ -121,7 +117,7 @@ public class SlideshowFragment extends Fragment {
         combobox4 = (Spinner) root.findViewById(R.id.spinner4);
         combobox5 = (Spinner) root.findViewById(R.id.spinner5);
         salvar = (CardView) root.findViewById(R.id.cardView);
-        data = (TextView) root.findViewById(R.id.data);
+        data = (Button) root.findViewById(R.id.data);
 
        // calendario = (CalendarView) root.findViewById(R.id.calendarView2);
         //foto = (ImageView) root.findViewById(R.id.imageView3);
@@ -158,6 +154,7 @@ public class SlideshowFragment extends Fragment {
 
                         try {
                             birthDate = new SimpleDateFormat("dd/MM/yyyy").parse(date);
+                            getHorariosDisponiveis(date);
                         } catch (ParseException e) {
                             e.printStackTrace();
                         }
@@ -170,6 +167,8 @@ public class SlideshowFragment extends Fragment {
                 datePickerDialog.show();
             }
         });
+
+
 
 
 
@@ -320,6 +319,7 @@ public class SlideshowFragment extends Fragment {
                 alerta.setTitle("Horário Marcado com Sucesso");
                 alerta.setMessage("Você selecionou: \n" + "Barbeiro: "+modeloEstilo.getBarbeiro() + "\n" + "Horário: "+modeloEstilo.getHorario() +
                                                     "\n" + "Cabelo: "+modeloEstilo.getCabelo() + "\n" + "Barba: "+modeloEstilo.getBarba() + "\n" + "Sobrancelha: "+modeloEstilo.getSobrancelha() +
+                                                    "\n" + "Data: "+modeloEstilo.getData() +
                 "\n" + "Valor total do serviço: R$ " + modeloEstilo.getValorTotal());
                 //alerta.setMessage("Valor total do serviço: ");
                 alerta.show();
@@ -332,6 +332,7 @@ public class SlideshowFragment extends Fragment {
 
 
 
+
 //        foto1.setOnClickListener(new View.OnClickListener() {
            // @Override
            // public void onClick(View v) {
@@ -341,9 +342,10 @@ public class SlideshowFragment extends Fragment {
         //});
 
 
+
+
         return root;
     }
-
 
 
     private String getFileExtension(Uri uri) {
@@ -380,6 +382,74 @@ public class SlideshowFragment extends Fragment {
         }
 
     }
+
+    protected void getHorariosDisponiveis(String data) {
+
+        ////////////////////////////////
+        ////    Mostra o loading    ////
+        ////////////////////////////////
+
+        ////////////////////////////////
+
+        // Inicializa a lista com todos os horários possíveis
+        final List<String> _horarios = new ArrayList<>(
+                Arrays.asList("Manhã - 9h:00", "Manhã - 9h:30min", "Manhã - 10h:00", "Manhã - 10h:30min",
+                        "Manhã - 11h:00", "Manhã - 11h:30min", "Manhã - 12h:00", "Manhã - 12h:30min",
+
+                        "Tarde - 14h:00", "Tarde - 14h:30min", "Tarde - 15h:00", "Tarde - 15h:30min", "Tarde - 16h:00",
+                        "Tarde - 16h:30min", "Tarde - 17h:00", "Tarde - 17h:30min",
+
+                        "Noite - 18h:00", "Noite - 18h:30min", "Noite - 19h:00", "Noite - 19h:30min", "Noite - 20h:00",
+                        "Noite - 20h:30min", "Noite - 21h:00"
+                )
+        );
+        System.out.println("AAAALAAAHUKBA");
+        System.out.println(data);
+        // Faz a consulta no firebase pegando todos horários /*equalsTo*/
+        FirebaseDatabase.getInstance().getReference("HorariosMarcados").orderByChild("data").equalTo(data).addListenerForSingleValueEvent(new ValueEventListener() {
+            @SuppressWarnings("newApi")
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                // Lista dos horários marcados na data
+                List<String> _marcados = new ArrayList<>();
+
+                // Add os horários na lista
+                for (DataSnapshot d : dataSnapshot.getChildren()) {
+                    ModeloEstilo m = d.getValue(ModeloEstilo.class);
+                    _marcados.add(m.getHorario());
+                }
+
+                System.out.println(_marcados);
+
+                // Filtra os horários que estão disponíveis
+                /*final*/
+                /*final List<ModeloEstilo>*/ add = _horarios.stream()
+                        .filter(e -> !_marcados.contains(e))
+                        .toArray(String[]::new);
+
+                // Atualiza o spinner com os horários
+                //add = _horarios.stream().toArray(String[]::new);
+                ArrayAdapter<String> adaptador = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, add);
+                combobox.setAdapter(adaptador);
+                adaptador.notifyDataSetChanged();
+
+                ////////////////////////////////
+                ////    Oculta o loading    ////
+                ////////////////////////////////
+
+                ////////////////////////////////
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Erro
+            }
+        });
+    }
+
+
+
+
 
 
     private void editarperfil() {

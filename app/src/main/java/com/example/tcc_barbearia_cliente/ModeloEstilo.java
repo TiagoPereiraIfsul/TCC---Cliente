@@ -15,6 +15,7 @@ public class ModeloEstilo implements Serializable {
     private String sobrancelha;
     private String data;
     private String valorTotal;
+    //private String HorariosDisponiveis;
 
     public ModeloEstilo(){}
 
@@ -129,4 +130,6 @@ public class ModeloEstilo implements Serializable {
     public void setValorTotal(String valorTotal) {
         this.valorTotal = valorTotal;
     }
+
+
 }

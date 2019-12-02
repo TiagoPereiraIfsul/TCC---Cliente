@@ -84,12 +84,13 @@
         android:layout_marginLeft="225dp"
         android:layout_marginTop="250dp"/>
 
-    <TextView
+    <Button
         android:id="@+id/data"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="350dp"
-        android:text="TextView" />
+        android:text="Selecionar Data" />
 
     <androidx.cardview.widget.CardView
         android:layout_marginTop="450dp"
