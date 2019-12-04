@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/apptygabg"
     tools:context=".Cadastro">
 
     <RelativeLayout android:layout_width="match_parent"
@@ -15,17 +16,18 @@
             android:id="@+id/button_choose_image"
             android:layout_width="200dp"
             android:layout_height="50dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="200dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
+            android:background="#D1D1D1"
             android:text="Add foto de perfil" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             app:civ_border_width="2dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="170dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             app:civ_border_color="#FF000000"/>
@@ -48,10 +50,11 @@
             android:layout_alignBottom="@+id/cardView"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="260dp"
-            android:background="#A9A9A9"
+            android:background="#D1D1D1"
             android:ems="10"
             android:hint="Nome + Sobrenome: "
             android:inputType="textPersonName"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:textColorHint="#000000"
             android:textSize="16dp" />
 
@@ -69,32 +72,41 @@
             android:layout_alignBottom="@+id/cardView"
             android:layout_alignLeft="@+id/editText"
             android:layout_alignStart="@+id/editText"/>-->
-        <EditText android:id="@+id/editText4"
+        <EditText
+            android:id="@+id/editText4"
             android:layout_width="250dp"
             android:layout_height="40dp"
-            android:background="#A9A9A9"
-            android:textColorHint="#000000"
-            android:ems="10" android:hint="Email: "
-            android:inputType="textPersonName"
-            android:textSize="16dp" android:layout_marginBottom="210dp"
             android:layout_above="@+id/editText2"
-            android:layout_centerHorizontal="true"
-            android:layout_alignBottom="@+id/cardView"
+            android:layout_alignStart="@+id/editText"
             android:layout_alignLeft="@+id/editText"
-            android:layout_alignStart="@+id/editText"/>
-        <EditText android:id="@+id/editText5"
+            android:layout_alignBottom="@+id/cardView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="210dp"
+            android:background="#D1D1D1"
+            android:ems="10"
+            android:hint="Email: "
+            android:inputType="textPersonName"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textColorHint="#000000"
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/editText5"
             android:layout_width="250dp"
             android:layout_height="40dp"
-            android:background="#A9A9A9"
-            android:textColorHint="#000000"
-            android:ems="10" android:hint="Senha: "
-            android:inputType="textPersonName"
-            android:textSize="16dp" android:layout_marginBottom="160dp"
             android:layout_above="@+id/editText2"
-            android:layout_centerHorizontal="true"
-            android:layout_alignBottom="@+id/cardView"
+            android:layout_alignStart="@+id/editText"
             android:layout_alignLeft="@+id/editText"
-            android:layout_alignStart="@+id/editText"/>
+            android:layout_alignBottom="@+id/cardView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="160dp"
+            android:background="#D1D1D1"
+            android:ems="10"
+            android:hint="Senha: "
+            android:inputType="textPersonName"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textColorHint="#000000"
+            android:textSize="16dp" />
 
         <!--<EditText android:id="@+id/editText6"
             android:layout_width="250dp"
@@ -116,7 +128,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="300dp"
             android:layout_height="50dp"
-            app:cardBackgroundColor="#A9A9A9"
+            app:cardBackgroundColor="#D1D1D1"
             app:cardCornerRadius="25dp"
             app:cardElevation="10dp"
             android:id="@+id/cardView"

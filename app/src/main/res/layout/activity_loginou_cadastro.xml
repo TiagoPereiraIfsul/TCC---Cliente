@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/apptygabg"
     tools:context=".LoginouCadastro">
 
     <RelativeLayout
@@ -17,9 +18,9 @@
             android:layout_height="50dp"
             android:layout_above="@+id/textView2"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="310dp"
+            android:layout_marginTop="615dp"
             android:layout_marginBottom="3dp"
-            app:cardBackgroundColor="#A9A9A9"
+            app:cardBackgroundColor="#79ACAC"
             app:cardCornerRadius="25dp"
             app:cardElevation="10dp">
 
@@ -47,9 +48,9 @@
             android:layout_height="50dp"
             android:layout_above="@+id/textView2"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="380dp"
+            android:layout_marginTop="680dp"
             android:layout_marginBottom="3dp"
-            app:cardBackgroundColor="#A9A9A9"
+            app:cardBackgroundColor="#79ACAC"
             app:cardCornerRadius="25dp"
             app:cardElevation="10dp">
 

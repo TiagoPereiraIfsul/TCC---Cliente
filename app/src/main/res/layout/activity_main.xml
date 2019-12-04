@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/apptygabg"
     tools:context=".MainActivity">
 
     <RelativeLayout android:layout_width="match_parent"
@@ -13,7 +14,6 @@
         <!--android:background="@color/common_google_signin_btn_text_dark_focused"-->
 
 
-
         <EditText
             android:id="@+id/editText"
             android:layout_width="250dp"
@@ -21,23 +21,28 @@
             android:layout_above="@+id/editText2"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="35dp"
-            android:background="#A9A9A9"
-            android:textColorHint="#000000"
+            android:background="#D1D1D1"
             android:ems="10"
             android:hint="Email"
             android:inputType="textPersonName"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textColorHint="#000000"
             android:textSize="16dp" />
-        <EditText android:id="@+id/editText2"
+
+        <EditText
+            android:id="@+id/editText2"
             android:layout_width="250dp"
             android:layout_height="40dp"
-            android:background="#A9A9A9"
-            android:textColorHint="#000000"
-            android:ems="10" android:hint="Password"
-            android:inputType="textPassword"
-            android:layout_marginBottom="130dp"
-            android:layout_alignBottom="@+id/cardView"
+            android:layout_alignStart="@+id/editText"
             android:layout_alignLeft="@+id/editText"
-            android:layout_alignStart="@+id/editText"/>
+            android:layout_alignBottom="@+id/cardView"
+            android:layout_marginBottom="130dp"
+            android:background="#D1D1D1"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textColorHint="#000000" />
 
 
 
@@ -48,7 +53,7 @@
             android:layout_above="@+id/textView2"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="3dp"
-            app:cardBackgroundColor="#A9A9A9"
+            app:cardBackgroundColor="#D1D1D1"
             app:cardCornerRadius="25dp"
             app:cardElevation="10dp">
 

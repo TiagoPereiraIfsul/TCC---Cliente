@@ -27,10 +27,13 @@ import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.tcc_barbearia_cliente.InicialCliente;
 import com.example.tcc_barbearia_cliente.ModeloBarbeiro;
 import com.example.tcc_barbearia_cliente.ModeloCadastro;
 import com.example.tcc_barbearia_cliente.ModeloEstilo;
@@ -77,7 +80,7 @@ public class SlideshowFragment extends Fragment {
     private ImageView foto;
     private int IMAGEM_ID = -1;
     private FirebaseAuth auth;
-    private CardView salvar;
+    private CardView salvar, voltar;
     private Button botao;
     private Uri mImageUri;
     private StorageTask mUploadTask;
@@ -117,6 +120,7 @@ public class SlideshowFragment extends Fragment {
         combobox4 = (Spinner) root.findViewById(R.id.spinner4);
         combobox5 = (Spinner) root.findViewById(R.id.spinner5);
         salvar = (CardView) root.findViewById(R.id.cardView);
+        voltar = (CardView) root.findViewById(R.id.cardView3);
         data = (Button) root.findViewById(R.id.data);
 
        // calendario = (CalendarView) root.findViewById(R.id.calendarView2);
@@ -329,6 +333,17 @@ public class SlideshowFragment extends Fragment {
             }
 
         });
+
+        voltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), InicialCliente.class);
+                startActivity(intent);
+
+            }
+        });
+
+
 
 
 
