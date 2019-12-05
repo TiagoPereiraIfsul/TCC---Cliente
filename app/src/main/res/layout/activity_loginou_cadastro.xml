@@ -18,7 +18,7 @@
             android:layout_height="50dp"
             android:layout_above="@+id/textView2"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="615dp"
+            android:layout_marginTop="315dp"
             android:layout_marginBottom="3dp"
             app:cardBackgroundColor="#79ACAC"
             app:cardCornerRadius="25dp"
