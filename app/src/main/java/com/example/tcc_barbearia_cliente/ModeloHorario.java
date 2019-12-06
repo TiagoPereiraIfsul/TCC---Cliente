@@ -2,11 +2,11 @@ package com.example.tcc_barbearia_cliente;
 
 import java.io.Serializable;
 
-public class ModeloBarbeiro implements Serializable {
+public class ModeloHorario implements Serializable {
 
     private String _id;
-    private String nome;
-    private String fotoperfil;
+    //private String nome;
+    //private String foto;
     private String barba;
     private String cabelo;
     private String sobrancelha;
@@ -14,29 +14,12 @@ public class ModeloBarbeiro implements Serializable {
     private String valorTotal;
     private String data;
 
-
     public String get_id() {
         return _id;
     }
 
     public void set_id(String _id) {
         this._id = _id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getFotoperfil() {
-        return fotoperfil;
-    }
-
-    public void setFotoperfil(String foto) {
-        this.fotoperfil = foto;
     }
 
     public String getBarba() {
@@ -85,10 +68,5 @@ public class ModeloBarbeiro implements Serializable {
 
     public void setData(String data) {
         this.data = data;
-    }
-
-    @Override
-    public String toString() {
-        return nome;
     }
 }

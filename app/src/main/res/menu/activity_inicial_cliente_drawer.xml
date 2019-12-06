@@ -9,7 +9,7 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="Página Inicial" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_tools"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Perfil" />
         <item
@@ -17,9 +17,9 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Marcar Horário" />
         <item
-            android:id="@+id/nav_tools"
+            android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_tools" />
+            android:title="Ver barbeiros" />
     </group>
 
     <item android:title="Communicate">

@@ -49,6 +49,6 @@ dependencies {
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.1.17'
     implementation 'de.hdodenhof:circleimageview:3.0.1'
     implementation 'com.squareup.picasso:picasso:2.5.2'
-    compile 'com.wdullaer:materialdatetimepicker:1.4.1'
+    implementation 'com.wdullaer:materialdatetimepicker:1.4.1'
 
 }

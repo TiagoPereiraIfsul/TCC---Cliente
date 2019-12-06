@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
         aliasSenha = findViewById(R.id.editText2);
         aliasCadastro = findViewById(R.id.textView2);
 
-        progressBar = (ProgressBar) findViewById(R.id.progressBarLogin);
-        progressBar.setVisibility(View.INVISIBLE);
+        //progressBar = (ProgressBar) findViewById(R.id.progressBarLogin);
+//        progressBar.setVisibility(View.INVISIBLE);
 
         aliasLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void login(String email, String senha) {
-        progressBar.setVisibility(View.VISIBLE);
+        //progressBar.setVisibility(View.VISIBLE);
         auth.signInWithEmailAndPassword(email, senha)
                 .addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                         {
                             Toast.makeText(MainActivity.this, "Usuário ou senha incorretos", Toast.LENGTH_SHORT).show();
                         }
-                        progressBar.setVisibility(View.GONE);
+                        //progressBar.setVisibility(View.GONE);
                     }
                 });
     }

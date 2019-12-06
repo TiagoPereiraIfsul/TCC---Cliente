@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.slideshow.FragmentSelecionar"
+    tools:context=".ui.tools.ActivityRecyclerView3"
     android:background="@drawable/brunobarber">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -13,6 +12,5 @@
         android:layout_height="match_parent">
 
     </androidx.recyclerview.widget.RecyclerView>
-
 
 </FrameLayout>

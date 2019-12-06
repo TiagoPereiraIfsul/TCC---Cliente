@@ -119,7 +119,7 @@
         android:layout_marginLeft="25dp"
         android:layout_width="150dp"
         android:layout_height="45dp"
-        app:cardBackgroundColor="#E2E2E2"
+        app:cardBackgroundColor="@color/colorin"
         app:cardCornerRadius="25dp"
         app:cardElevation="10dp"
         android:id="@+id/cardView"
@@ -151,7 +151,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="450dp"
         android:layout_marginBottom="3dp"
-        app:cardBackgroundColor="#E2E2E2"
+        app:cardBackgroundColor="@color/colorin"
         app:cardCornerRadius="25dp"
         app:cardElevation="10dp">
 

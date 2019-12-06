@@ -1,5 +1,4 @@
-package com.example.tcc_barbearia_cliente.ui.slideshow;
-
+package com.example.tcc_barbearia_cliente.ui.gallery;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
